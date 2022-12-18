@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LCMC.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="lcmc">LCMC</h1>
+<h2 id="dfa">DFA</h2>
+<h3 id="creazione-dfa-a-partire-da-un-linguaggio">Creazione DFA a partire da un linguaggio</h3>
+<p>Aggiornamento: 2022-12-14, esercizi fino gennaio 2016</p>
+<p>Raccolta di esercizi (prevalentemente di esami) in cui viene richiesto di creare dei DFA.</p>
+<hr>
+<h4 id="simulazione-esame-2022-12-14">Simulazione-Esame-2022-12-14</h4>
+<p>Esercizio 1: Definire un DFA che riconosce il linguaggio delle stringhe binarie che contengono un numero pari di 0 oppure che interpreate come numero in base 2 rappresentano un numero multiplo di 3</p>
+<p><img src="pics/ex-dfa-2022-12-14.png" alt="DFA dell'esercizio"></p>
+<p>In questa risoluzione è mostrato come unire due automi date le specifiche dell'esercizio. <strong>Gli stati iniziali degli automi parziali sono q0 e q2</strong>. L'automa finale racchiude le coppie degli stati di quelli iniziali e ci si muove fra le coppie considerando le transizioni di entrambi per &quot;0&quot; e per &quot;1&quot;. Gli stati finali sono quelli che possiedono nella coppia uno degli stati finali degli automi parziali, quindi q0 e q2.
+Il secondo parziale si muove con gli &quot;0&quot; e &quot;1&quot; tenendo conto che ad un numero binario se aggiungiamo uno &quot;0&quot; allora raddoppieremo il resto precedente andando a raddoppiare il numero; mentre aggiungendo &quot;1&quot; andiamo a raddoppiare e a sommare un'unità.</p>
+<hr>
+<h4 id="esame-2020-gennaio-31-dfa">Esame-2020-Gennaio-31-dfa</h4>
+<p>Costruire un DFA per il linguaggio <strong>L</strong> su alfabeto {a,b} delle stringhe w in cui lo stesso simbolo non appare mai tre volte consecutivamente. Ad esempio <em><strong>aabbaba</strong></em>, <em><strong>ababb</strong></em>, <em><strong>ε</strong></em> appartengono ad L mentre <em><strong>aaab</strong></em>, <em><strong>aaaa</strong></em>, <em><strong>aaababbb</strong></em> non vi appartengono. Nel realizzare il DFA fare attenzione ad utilizzare un numero minimo di stati (non si richiede, però, di verificare la effettiva minimalità con l’algoritmo di minimizzazione).</p>
+<p><img src="pics/ex-dfa-2020-01-31.png" alt="DFA dell'esercizio 1 dell'esame del 31 gennaio 2020"></p>
+<hr>
+<h4 id="esame-2020-settembre-08-dfa">Esame-2020-Settembre-08-dfa</h4>
+<h5 id="esercizio-1">Esercizio-1</h5>
+<p>Definire (direttamente, senza fare trasformazioni) un’espressione regolare che rappresenti il linguaggio L su alfabeto {a,b} delle stringhe a^n b^m, con n,m ≥ 0, per cui valga: se n mod 2 = 0 allora m mod 3 = 1, se invece n mod 2 = 1 allora m mod 3 = 2.
+Ad esempio aab, b, bbbb, aaabb, abbbbb, appartengono al linguaggio L mentre ε, a, aa, bb, bbb, baa, aabb, aaab, non vi appartengono. Trasformare, poi, l’espressione regolare in ε-NFA utilizzando la trasformazione vista a lezione (cioè quella definita nel libro di testo).</p>
+<h5 id="esercizio-2">Esercizio-2</h5>
+<p>Costruire (direttamente, senza fare trasformazioni) un DFA per il linguaggio L dell’esercizio 1. Nel realizzare il DFA fare attenzione ad utilizzare un numero minimo di stati: verificare la effettiva minimalità tramite l’algoritmo riempi-tabella (utilizzare una crocetta di tipo diverso ad ogni passata).</p>
+<p><em>Sono riportati entrambi gli esercizi dato che le specifiche del linguaggio di quello relativo al DFA era nell'esercizio precedente</em></p>
+<p><img src="pics/ex-dfa-2020-09-08-less-steps.png" alt="DFA con meno passi"></p>
+<p>Gli stati di <strong>b</strong> (<strong>q2</strong>,<strong>q3</strong>,<strong>q4</strong>) rappresentano i tre possibili moduli differentemente in base a come entriamo nel ciclo: se arriviamo in <strong>q2</strong> da <strong>q0</strong> allora <strong>q2</strong> indicherà una sequenza di <strong>b</strong> con modulo uguale a 1, se arriviamo da <strong>q1</strong> a <strong>q3</strong> questo ruolo lo avrà <strong>q3</strong>.
+Lo stato <strong>q6</strong> viene raggiunto quando durante le letture di <strong>b</strong> incontriamo una <strong>a</strong> che ci porterebbe ad avere inevitabilmente una stringa che non può più far parte del linguaggio.</p>
+<hr>
+<h4 id="esame-2019-luglio-09-dfa">Esame-2019-Luglio-09-dfa</h4>
+<p>Costruire un DFA per il linguaggio L su alfabeto {0,1,2} che contiene le stringhe <strong>w</strong> in cui la somma dei numeri (0, 1 o 2) contenuti in <strong>w</strong> sia un multiplo di 3. Ad esempio 22101, 1011, 0021, 211110, 00000, 0, ε appartengono ad L mentre 1, 2, 110, 010, 22 non vi appartengono. Nel realizzare il DFA fare attenzione ad utilizzare il numero minimo di stati.
+In seguito, verificare che il DFA realizzato sia effettivamente minimo usando l’algoritmo riempi-tabella visto a lezione (cioè quello definito nel libro di testo). Mostrare la tabella, utilizzando una crocetta di tipo diverso ad ogni passata.</p>
+<p><img src="pics/ex-dfa-2019-07-09.png" alt="DFA dell'esercizio"></p>
+<p>L'esercizio si può risolvere come altri che sono stati visti dove gli stati rappresentano il risultato dei moduli. In questo caso durante la consumazione della stringa ci spostiamo lungo tali risultati possibili 0, 1, 2:</p>
+<ul>
+<li>0 non porta a cambiare stato dato che la somma non cambia;</li>
+<li>1 aumenta il risultato del modulo di un'unità</li>
+<li>2 aumenta il risultato del modulo di due unità</li>
+</ul>
+<hr>
+<h4 id="esame-2019-febbraio-02-dfa">Esame-2019-Febbraio-02-dfa</h4>
+<p>Costruire un DFA per il linguaggio L su alfabeto {a,(,)} in cui il numero delle a sia un multiplo di 3 ignorando tutto quello che c'è tra una parentesi tonda aperta (incontrata leggendo la stringa da sinistra a destra) e la prima parentesi tonda chiusa che la segue (o la fine della stringa in caso non ci sia una parentesi tonda chiusa che la segue). Le parentesi tonde, cioè, sono come delimitatori di commenti di un linguaggio di programmazione, dentro cui le a non vengono contate: una parentesi tonda aperta apre il commento e la prima parentesi tonda chiusa che lo segue chiude il commento. Ad esempio a()a()()a, a(<em>a</em>)aaa(<em>a</em>)aa, a)a))a, ε, a((<em>a</em>)aa, a(<em>a</em>()aa(a, (((, )((<em>aa</em>, (<em>a</em>)) appartengono ad L mentre aa(<em>a</em>, (<em>aa</em>)a non vi appartengono (le parti ignorate, che non contribuiscono al conteggio delle a, sono in <em>italic</em> solo per chiarire il motivo dell’appartenenza o meno).</p>
+<p><img src="pics/ex-dfa-2019-02-01.png" alt="DFA dell'esercizio"></p>
+<p>Anche in questo caso come negli esercizi precedenti il concetto di &quot;multiplo&quot; è stato trattato sfruttando i moduli. Seguendo il percorso $q1 \to q2 \to q3$ incrementiamo la cardinalità delle &quot;a&quot; nella stringa e quindi anche il modulo. Da ogni stato se leggiamo un &quot;(&quot; entriamo in un corrispettivo stato che permette di non prendere in considerazione ulteriori &quot;a&quot; e &quot;(&quot; fino a che non troveremeo una &quot;)&quot;. L'unico differente è $q3$ che rappresenta anch'esso uno stato finale dato che il numero di &quot;a&quot; che già avevamo prima di arrivarci soddisfava le condizioni del linguaggio.</p>
+<hr>
+<h4 id="esame-2019-gennaio-15-dfa">Esame-2019-Gennaio-15-dfa</h4>
+<p>Costruire un DFA per il linguaggio L su alfabeto {a,b,0,1} (composto dalle  lettere “a” e “b” e dai numeri “0” e “1”), definito come segue. Una stringa $w \in L$ se e solo se ogni suo gruppo di lettere è seguito da due numeri $n_1 ,n_2 \in {0,1}$ tali che, indicato con $k_a$ il numero di “a” nel gruppo e con $k_b$ il numero di “b” nel gruppo: $n_1=0$ se $k_a$ è pari
+($n_1=1$ altrimenti) e $n_2=0$ se $k_b$ è pari ($n_2=1$ altrimenti). Ad esempio $aabab10ab11abba00 \in L$ (il primo gruppo di lettere ha un numero dispari di “a” ed un numero pari di “b”, come indicato da “10”, il secondo un numero dispari sia di “a” che di “b”, cioè “11”, ed il terzo un numero pari sia di “a” che di “b”, cioè “00”). Altri esempi di stringhe in L sono:
+aab01, aaa10b01, 0100, ε, abb1011, aab010b01. Esempi di stringhe non in L sono: ab10, aabb0, a, aaab1ab11. Nel costruire il DFA si eviti di introdurre stati tra loro equivalenti: lo si costruisca il più piccolo possibile.</p>
+<blockquote>
+<p>La soluzione presentata tiene conto della struttura del linguaggio e non tanto alle stringhe date come esempio che non si sa se essere effettivamente corrette date le specifiche. Ad esempio <em>0100, abb1011, aab010b01</em> non rispettano le regole che traspaiono dal linguaggio.</p>
+</blockquote>
+<p><img src="pics/ex-dfa-2019-01-15.png" alt="DFA dell'esercizio"></p>
+<p>Le transizioni che non sono presenti nell'automa portano allo stato pozzo, il quale non è stato messo per rendere più leggibile lo schema.
+Spostandosi fra q1 q2 q3 q4 è possibile ritrovarsi nelle condizioni in cui la stringa, precedente alla coppia di numeri, abbia:</p>
+<ul>
+<li>un numero di &quot;a&quot; pari e &quot;b&quot; pari</li>
+<li>un numero di &quot;a&quot; pari e &quot;b&quot; dispari</li>
+<li>un numero di &quot;a&quot; dispari e &quot;b&quot; pari</li>
+<li>un numero di &quot;a&quot; dispari e &quot;b&quot; dispari</li>
+</ul>
+<p>In base allo stato di questi da cui usciamo possiamo andare in q6 o q7:</p>
+<ul>
+<li>q6 sta ad indicare una situzione in cui il numero di &quot;b&quot; è pari e ciò comporta, dopo avere letto il numero relativo ad &quot;a&quot;, di dovere leggere uno zero</li>
+<li>q7 è speculare, quindi relativo ad un numero di b dispari
+In entrambi gli stati possiamo arrivare sia con un 1 che con uno 0 in base al fatto che le &quot;a&quot; siano dispari o pari</li>
+</ul>
+<p>Infine, da q8 ci muoviamo come dallo stato iniziale andando in una situazione di &quot;a&quot; o &quot;b&quot; dispari.</p>
+<blockquote>
+<p>Non è chiaro se una stringa possa avere una coppia di zeri dopo la precedente coppia di numeri come ad esempio ab1100. In caso lo fosse questo secondo automa lo permette.</p>
+</blockquote>
+<p><img src="pics/ex-dfa-2019-01-15-aggiuntivo.png" alt="DFA aggiuntivo dell'esercizio"></p>
+<p>In questo caso abbiamo un'ulteriore transizione che va da q8 a q6 leggendo uno zero</p>
+<hr>
+<h4 id="esame-2018-gennaio-16-dfa">Esame-2018-Gennaio-16-dfa</h4>
+<p>Esercizio 1. Realizzare un DFA che riconosca il linguaggio su alfabeto {0,1,2} che contiente le stringhe $x2y$, dove $x$ e $y$ sono stringhe su {0,1} tali che: $x$ ha lunghezza almeno 2 e $y$ è il prefisso di lunghezza 2 di $x$. Ad esempio 1011210, 01201 ed 11000211 appartengono al linguaggio mentre 1210, 110 ed 0120 non vi appartengono.</p>
+<p><img src="pics/ex-dfa-2018-01-16.png" alt="DFA dell'esercizio"></p>
+<p>Le transizioni che non sono presenti portano allo stato pozzo. In questo caso abbiamo bisogno di 4 stati per poter memorizzare i 4 possibili stati che ci interessano e che $y$ dovrà &quot;ricordare&quot;. Dopo avere letto i primi caretteri l'automa continua a ciclare su 0 e 1 fino a che non capiterà un 2, solo allora procederà alla sequenza sucessiva.</p>
+<h4 id="esame-2017-giugno-13-dfa">Esame-2017-Giugno-13-dfa</h4>
+<p>Esercizio 2. Definire (direttamente, senza fare trasformazioni) un DFA che rappresenti il linguaggio sull’alfabeto {a,b} delle stringhe in cui il numero $n$ di &quot;a&quot; ed il numero $m$ di &quot;b&quot; sono tali che: $n$ ed $m$ danno lo stesso resto quando divisi per 3, cioè $n \space mod(3) = m\space mod(3)$. Ad esempio abaabb, bbabb, abab, aaa ed ε appartengono al linguaggio mentre bb, a, aabbb e babaaa non vi appartengono.</p>
+<blockquote>
+<p>Di questo esercizio sono presenti due versioni di DFA una più estesa e una più contratta.</p>
+</blockquote>
+<p><img src="pics/ex-dfa-2017-06-13-prolisso.png" alt="DFA dell'esercizio esteso"></p>
+<p>Qui è possibile vedere la versione estesa, dove ogni possibile combinazione dei resti è stata modellata con uno stato. Le etichette degli stati ci mostrano a quanto ammonta il resto per il numero di &quot;a&quot; e per il numero di &quot;b&quot; (il primo numero dopo l'uguale si riferisce alle &quot;a&quot; e quello dopo &quot;/&quot; alle &quot;b&quot;). Leggendo ogni volta input &quot;a&quot; o &quot;b&quot; entriamo in una configurazione diversa.</p>
+<p><img src="pics/ex-dfa-2017-06-13-contratto.png" alt="DFA dell'esercizio contratto"></p>
+<p>In questo DFA vi sono 4 stati in meno e i 3 stati finali precedenti sono stati condensati in uno soltanto. Aumentando le &quot;a&quot; aumentano le &quot;b&quot; per &quot;tornare indietro&quot; e quindi avere un medesimo resto, viceversa aumentando le &quot;b&quot;.</p>
+<hr>
+<h4 id="esame-2017-febbraio-22-dfa">Esame-2017-Febbraio-22-dfa</h4>
+<p>Esercizio 1. Definire (direttamente, senza fare trasformazioni) un’espressione regolare che rappresenti il linguaggio sull’alfabeto {0,1} delle stringhe in cui il numero di gruppi di 0 è pari. Ad esempio 011001, 1010110010, 111 ed ε appartengono al linguaggio mentre 0110010, 1110 ed 1001 non vi appartengono.</p>
+<p>Esercizio 2. Realizzare (direttamente, senza fare trasformazioni) un DFA con 4 stati che riconosca il linguaggio dell’esercizio precedente. Dire, tramite l’algoritmo riempi-tabella visto a lezione/nel libro di testo (utilizzare una crocetta di tipo diverso ad ogni passata) se tale DFA è equivalente o meno al DFA...</p>
+<p><em>Sono riportati entrambi gli esercizi dato che le specifiche del linguaggio di quello relativo al DFA era nell'esercizio precedente</em></p>
+<p><img src="pics/ex-dfa-2017-02-22.png" alt="DFA dell'esercizio"></p>
+<hr>
+<h4 id="esame-2017-gennaio-13">Esame-2017-Gennaio-13</h4>
+<p>Esercizio 1. Realizzare un DFA che riconosca il linguaggio sull’alfabeto binario {0,1} che contiene le stringhe in cui ogni gruppo di 1 adiacenti è di lunghezza multipla di 3. Ad esempio 011100111111 appartiene al linguaggio mentre 1110010 non vi appartiene.</p>
+<p><img src="pics/ex-dfa-2017-01-13.png" alt="DFA dell'esercizio"></p>
+<hr>
+<h4 id="esame-2016-giugno-14">Esame-2016-Giugno-14</h4>
+<p>Esercizio 1. Dato l'alfabeto {a,b} realizzare un DFA che riconosce le stringhe che terminano con “a” o nelle quali il numero di “b” sia multiplo di 3.</p>
+<p><img src="pics/ex-dfa-2016-06-14.png" alt="DFA dell'esercizio"></p>
+<p>Dal momento che 0 è multiplo di tutti i numero, anche la stringa vuota viene accettata. Il percorso $q1 \to q2 \to q3$ si muove lungo il modulo per 3 del numero delle &quot;b&quot;. Da q1 e q2 possiamo andare inoltre in uno stato di accettazione leggendo un carattere &quot;a&quot;.</p>
+<hr>
+<h4 id="esame-2016-febbario-19">Esame-2016-Febbario-19</h4>
+<p>Esercizio 2. Costruire un DFA che riconosce le stringhe sull’alfabeto {a,b} che non contengono “aa” e trasformarlo in espressione regolare con il metodo di eliminazione degli stati visto a lezione (cioè quello definito nel libro di testo).</p>
+<p><img src="pics/ex-dfa-2016-02-19.png" alt="DFA dell'esercizio"></p>
+<hr>
+<h4 id="esame-2016-febbraio-02">Esame-2016-Febbraio-02</h4>
+<p>Esercizio 1: Dato l'alfabeto {a,b} realizzare un DFA che riconosce le stringhe che terminano con “b” e nelle quali il numero di “a” non sia multiplo di 3.</p>
+<p><img src="pics/ex-dfa-2016-02-02.png" alt="DFA dell'esercizio"></p>
+<hr>
+<h4 id="esame-2016-gennaio-18">Esame-2016-Gennaio-18</h4>
+<p>Esercizio 1. Dato l'alfabeto {a,b} realizzare un DFA che riconosce le stringhe che contengono “ba” oppure hanno un numero pari di “a”.</p>
+<p><img src="pics/ex-dfa-2016-01-18.png" alt="DFA dell'esercizio"></p>
+<blockquote>
+<p>Nota: gli stati &quot;q1,q4&quot; e &quot;q0,q4&quot; possono essere collasati in uno mettendoci un ulteriore autociclo per &quot;a&quot; oltre che per &quot;b&quot;</p>
+</blockquote>
+<p>In questa risoluzione è mostrato come unire due automi date le specifiche dell'esercizio. <strong>Gli stati iniziali degli automi parziali sono q0 e q2</strong>. L'automa finale racchiude le coppie degli stati di quelli iniziali e ci si muove fra le coppie considerando le transizioni di entrambi per &quot;a&quot; e per &quot;b&quot;. Gli stati finali sono quelli che possiedono nella coppia uno degli stati finali degli automi parziali, quindi q0 e q4.</p>
+<hr>
+<h2 id="esami">Esami</h2>
+
+</body>
+</html>
