@@ -261,7 +261,7 @@ In questa risoluzione è mostrato come unire due automi date le specifiche dell'
 
 #### Esame-2022-Giugno-28-eps-nfa-to-dfa
 
-Dato l'$\epsilon$-NFA
+Dato l'$\epsilon$-NFA su alfabeto {0,1,2}:
 
 ![eps-NFA esercizio](pics/ex-eps-nfa-to-dfa-2022-06-28-text.png)
 
@@ -290,3 +290,5 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 ### 2022-06-28-exam
 
 [Esercizio 1](#esame-2022-giugno-28-dfa)
+
+[Esercizio 2](#esame-2022-giugno-28-eps-nfa-to-dfa)
