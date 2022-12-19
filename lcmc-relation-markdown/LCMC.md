@@ -4,6 +4,13 @@
 
 ### Creazione NFA e epsilon-NFA a partire da un linguaggio
 
+#### Esame-2022-Febbraio-15-eps-nfa
+
+Esercizio 1. Costruire un ε-NFA per il linguaggio L su alfabeto {1,2,3} delle stringhe w, con |w| ≥ 1, in cui, indicato con X l’ultimo numero in w (cioè il numero X tale che w=vX con v$\in${1,2,3}*), il numero X appare almeno X volte dentro w. Ad esempio 1, 21, 11, 1232, 32323, 3333 appartengono ad L mentre ε, 2, 12, 33 non vi appartengono.
+
+![eps-NFA dell'esercizio](pics/ex-eps-nfa-2022-02-15.png)
+
+---
 ### Creazione epsilon-NFA a partire da una RE
 
 ---
@@ -76,6 +83,17 @@ In questo modo prima di tutto viene rispettato l'ordine dei cartteri del linguag
 Nel secondo caso invece abbiamo sempre un numero dispari di "a" a cui vengono concatenate un numero di "b" sempre uguale a 2 per modulo di 3. Il procedimento è analogo al caso in cui le "a" sono in numero pari, solo che vengono aggiunte 2 "b"
 
 ---
+
+### Creazione RE a partire da automa
+
+#### Esame-2022-02-15-automa-to-re
+
+Dato l'automa qui sotto, trasformarlo in espressione regolare con il metodo di eliminazione degli stati visto a lezione.
+
+![Automa esercizio](pics/ex-automa-to-re-2022-02-15-text.png)
+
+
+
 ## DFA
 
 ### Creazione DFA a partire da un linguaggio
