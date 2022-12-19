@@ -4,6 +4,34 @@
 
 ### Creazione NFA e epsilon-NFA a partire da un linguaggio
 
+### Creazione epsilon-NFA a partire da una RE
+
+---
+#### Esame-2022-Settembre-09-re-to-eps-nfa
+
+Esercizio 2. Data l'espressione regolare $(aa)^*(b^*+a(bb)^*)$ trasformarla in un -NFA utilizzando la trasformazione vista a lezione (cioè quella definita nel libro di testo).
+
+Verranno mostrati per gradi i diversi passaggi.
+
+$$aa$$
+![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt1.png)
+$$(aa)^*$$
+![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt2.png)
+$$b$$
+![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt3.png)
+$$b^*$$
+![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt4.png)
+$$(bb)^*$$
+![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt5.png)
+$$a(bb)^*$$
+![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt6.png)
+$$b^*+a(bb)^*$$
+> La label start è un errore
+![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt7.png)
+$$(aa)^*(b^*+a(bb)^*)$$
+![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt8.png)
+
+---
 ## CFG
 
 ### Creazione CFG a partire da un linguaggio
@@ -29,7 +57,7 @@ Discorso speculare per $B$
 
 #### Esame-2022-Settembre-09-re
 
-Definire (direttamente senza far trasformazioni) un’espressione regolare che rappresenti il linguaggio L su alfabeto {a,b} delle stringhe $a^nb^m$, con n,m ≥ 0, tali che, considerato n mod 2 = 1 e m mod 3 ≠ 2. Ad esempio a, ab, aaaaa, aaabbbb, abbb appartengono al linguaggio mentre ε, b, abb, aa, aab, abbbbb e ba non vi appartengono.
+Esercizio 1. Definire (direttamente senza far trasformazioni) un’espressione regolare che rappresenti il linguaggio L su alfabeto {a,b} delle stringhe $a^nb^m$, con n,m ≥ 0, tali che, considerato n mod 2 = 1 e m mod 3 ≠ 2. Ad esempio a, ab, aaaaa, aaabbbb, abbb appartengono al linguaggio mentre ε, b, abb, aa, aab, abbbbb e ba non vi appartengono.
 
 $$
 a(aa)^*(bbb)^*(b+\epsilon)
@@ -237,3 +265,9 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 ![eps-NFA to DFA](pics/ex-eps-nfa-to-dfa-2020-06-26-solved.png)
 
 ## Esami
+
+### 2022-09-09-exam
+
+[Esercizio 1](#esame-2022-settembre-09-re)
+
+[Esercizio 2](#esame-2022-settembre-09-re-to-eps-nfa)
