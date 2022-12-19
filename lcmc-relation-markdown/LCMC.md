@@ -25,7 +25,18 @@ Discorso speculare per $B$
 
 ## Espressioni Regolari
 
-#### Esame-2020-Settembre-08-cfg
+### Creazione RE a partire da un linguaggio
+
+#### Esame-2022-Settembre-09-re
+
+Definire (direttamente senza far trasformazioni) un’espressione regolare che rappresenti il linguaggio L su alfabeto {a,b} delle stringhe $a^nb^m$, con n,m ≥ 0, tali che, considerato n mod 2 = 1 e m mod 3 ≠ 2. Ad esempio a, ab, aaaaa, aaabbbb, abbb appartengono al linguaggio mentre ε, b, abb, aa, aab, abbbbb e ba non vi appartengono.
+
+$$
+a(aa)^*(bbb)^*(b+\epsilon)
+$$
+
+---
+#### Esame-2020-Settembre-08-re
 
 Esercizio 1. Definire (direttamente, senza fare trasformazioni) un’espressione regolare che rappresenti il linguaggio L su alfabeto {a,b} delle stringhe $a^nb^m$, con n,m ≥ 0, per cui valga: se n mod 2 = 0 allora m mod 3 = 1, se invece n mod 2 = 1 allora m mod 3 = 2. Ad esempio aab, b, bbbb, aaabb, abbbbb, appartengono al linguaggio L mentre ε, a, aa, bb, bbb, baa, aabb, aaab, non vi appartengono. Trasformare, poi, l’espressione regolare in ε-NFA utilizzando la trasformazione vista a lezione (cioè quella definita nel libro di testo).
 
