@@ -76,15 +76,10 @@ In questo modo prima di tutto viene rispettato l'ordine dei cartteri del linguag
 Nel secondo caso invece abbiamo sempre un numero dispari di "a" a cui vengono concatenate un numero di "b" sempre uguale a 2 per modulo di 3. Il procedimento è analogo al caso in cui le "a" sono in numero pari, solo che vengono aggiunte 2 "b"
 
 ---
-
-
 ## DFA
 
 ### Creazione DFA a partire da un linguaggio
 
-Aggiornamento: 2022-12-14, esercizi fino gennaio 2016
-
-Raccolta di esercizi (prevalentemente di esami) in cui viene richiesto di creare dei DFA.
 
 ---
 #### Simulazione-Esame-2022-12-14-dfa
@@ -95,6 +90,16 @@ Esercizio 1: Definire un DFA che riconosce il linguaggio delle stringhe binarie 
 
 In questa risoluzione è mostrato come unire due automi date le specifiche dell'esercizio. **Gli stati iniziali degli automi parziali sono q0 e q2**. L'automa finale racchiude le coppie degli stati di quelli iniziali e ci si muove fra le coppie considerando le transizioni di entrambi per "0" e per "1". Gli stati finali sono quelli che possiedono nella coppia uno degli stati finali degli automi parziali, quindi q0 e q2.
 Il secondo parziale si muove con gli "0" e "1" tenendo conto che ad un numero binario se aggiungiamo uno "0" allora raddoppieremo il resto precedente andando a raddoppiare il numero; mentre aggiungendo "1" andiamo a raddoppiare e a sommare un'unità.
+
+---
+#### Esame-2022-Giugno-28-dfa
+
+Esercizio 1. Definire (direttamente, senza fare trasformazioni) un DFA che rappresenti il linguaggio sull’alfabeto {a,b} delle stringhe $a^nb^m$ in cui 
+$$n \space mod(2) = 1 \\ m \space mod(3) \neq 2$$
+Ad esempio a, ab, aaaaa, aaabbbb, abbb appartengono al linguaggio mentre ε, b, abb, aa, aab, abbbbb e ba non vi appartengono.
+
+![DFA dell'esercizio](pics/ex-dfa-2022-06-28.png)
+
 
 ---
 #### Esame-2020-Gennaio-31-dfa
@@ -254,7 +259,17 @@ In questa risoluzione è mostrato come unire due automi date le specifiche dell'
 
 ### Creazione DFA a partire da un epsilon-NFA
 
-#### Esame-2020-Giugno-26
+#### Esame-2022-Giugno-28-eps-nfa-to-dfa
+
+Dato l'$\epsilon$-NFA
+
+![eps-NFA esercizio](pics/ex-eps-nfa-to-dfa-2022-06-28-text.png)
+
+Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
+
+![eps-NFA to DFA](pics/ex-eps-nfa-to-dfa-2022-06-28-solved.png)
+
+#### Esame-2020-Giugno-26-eps-nfa-to-dfa
 
 Dato l'$\epsilon$-NFA
 
@@ -271,3 +286,7 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 [Esercizio 1](#esame-2022-settembre-09-re)
 
 [Esercizio 2](#esame-2022-settembre-09-re-to-eps-nfa)
+
+### 2022-06-28-exam
+
+[Esercizio 1](#esame-2022-giugno-28-dfa)
