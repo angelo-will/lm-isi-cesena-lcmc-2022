@@ -92,7 +92,42 @@ Dato l'automa qui sotto, trasformarlo in espressione regolare con il metodo di e
 
 ![Automa esercizio](pics/ex-automa-to-re-2022-02-15-text.png)
 
+Procedendo all'eliminazione degli stati otteremo un automa di così fatto:
 
+![Automa ridotto](pics/ex-automa-to-re-2022-02-15-solved-pt0.png)
+
+A questo punto drovremo procedere a considerare i singoli casi di stati di accettazione, quindi il caso in cui solo q2 sia di accettazione e il caso in cui solo q5 sia di accettazione
+
+**Caso q5 stato finale** - Procediamo all'eliminazione di q2
+
+![Automa ridotto](pics/ex-automa-to-re-2022-02-15-solved-pt1.png)
+
+Tenendo presente quanto fatto a lezione e la *"formula della casa al lago"* otteniamo:
+$$
+((a+ba)(ba)^*abbb)^*(a+ba)(ba)^*
+$$
+
+**Caso q2 stato finale** - Procediamo all'eliminazione di q5
+
+![Automa ridotto](pics/ex-automa-to-re-2022-02-15-solved-pt2.png)
+
+In questo caso otteniamo
+
+$$
+((a+ba)(ba)^*abbb)^*(a+ba)(ba)^*a)
+$$
+
+L'espressione regolare finale quindi risulta essere
+
+$$
+((a+ba)(ba)^*abbb)^*(a+ba)(ba)^* + ((a+ba)(ba)^*abbb)^*(a+ba)(ba)^*a) \\
+$$
+
+Semplificabile in
+
+$$
+((a+ba)(ba)^*abbb)^*(a+ba)(ba)^*(\epsilon + a)
+$$
 
 ## DFA
 
@@ -310,3 +345,9 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 [Esercizio 1](#esame-2022-giugno-28-dfa)
 
 [Esercizio 2](#esame-2022-giugno-28-eps-nfa-to-dfa)
+
+### 2022-02-15-exam
+
+[Esercizio 1](#esame-2022-febbraio-15-eps-nfa)
+
+[Esercizio 2](#esame-2022-02-15-automa-to-re)
