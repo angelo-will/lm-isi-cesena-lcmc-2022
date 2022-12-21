@@ -170,6 +170,13 @@ Ad esempio a, ab, aaaaa, aaabbbb, abbb appartengono al linguaggio mentre ε, b, 
 
 ![DFA dell'esercizio](pics/ex-dfa-2022-06-28.png)
 
+---
+### Esame-2022-Gennaio-14-dfa
+Esercizio 1. Realizzare un DFA che riconosca il linguaggio sull’alfabeto binario {0,1} che contiene le stringhe in cui: ogni gruppo di 1 adiacenti è tale che, indicata con n la lunghezza del gruppo, si abbia $n \space mod(3)=1$ (cioè il resto di n diviso 3 è 1). Ad esempio 1111, 010, 01001111, ε, 0 appartengono al linguaggio mentre 111, 0110, 111100110 non vi appartengono.
+
+![DFA dell'esercizio](pics/ex-dfa-2022-01-14.png)
+
+Siccome ε fa parte del linguaggio sono stati creati due stati per quando il resto è 0.
 
 ---
 #### Esame-2020-Gennaio-31-dfa
@@ -372,3 +379,7 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 ### 2022-01-31-exam
 
 [Esercizio 1](#esame-2022-gennaio-31-re)
+
+### 2022-01-14-exam
+
+[Esercizio 1](#esame-2022-gennaio-14-dfa)
