@@ -1,5 +1,11 @@
 # LCMC
 
+**IMPORTANTE**
+
+Questo documento è stato pensato per esercitarsi su "argomenti", se volete utilizzarlo come fonte di soluzione per gli esami su cui vi state esercitando potete saltare alla sezione [Esami](#esami) dove sarà presente un link alla soluzione degli esercizi di quell'esame.
+
+Buon studio :)
+
 ## NFA-&-epsilon-NFA
 
 ### Creazione NFA e epsilon-NFA a partire da un linguaggio
