@@ -39,6 +39,28 @@ $$(aa)^*(b^*+a(bb)^*)$$
 ![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt8.png)
 
 ---
+#### Esame-2022-01-14-re-to-eps-nfa
+
+Esercizio 2. Data l'espressione regolare $((1+\epsilon)0)^*+1$ trasformarla in un ε-NFA utilizzando la trasformazione vista a lezione (cioè quella definita nel libro di testo).
+
+Verranno mostrati per gradi gli schemi prodotti.
+
+$$1$$
+![eps-NFA parziale](pics/ex-re-to-eps-nfa-2022-01-14-pt00.png)
+$$\epsilon$$
+![eps-NFA parziale](pics/ex-re-to-eps-nfa-2022-01-14-pt01.png)
+>**Importante** \
+>Riguardo a questa soluzione per epsilon non è sicuro al 100% che sia corretta
+$$(1+\epsilon)$$
+![eps-NFA parziale](pics/ex-re-to-eps-nfa-2022-01-14-pt02.png)
+$$(1+\epsilon)0$$
+![eps-NFA parziale](pics/ex-re-to-eps-nfa-2022-01-14-pt03.png)
+$$((1+\epsilon)0)^*$$
+![eps-NFA parziale](pics/ex-re-to-eps-nfa-2022-01-14-pt04.png)
+$$((1+\epsilon)0)^*+1$$
+![eps-NFA parziale](pics/ex-re-to-eps-nfa-2022-01-14-pt05.png)
+
+---
 ## CFG
 
 ### Creazione CFG a partire da un linguaggio
@@ -383,3 +405,5 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 ### 2022-01-14-exam
 
 [Esercizio 1](#esame-2022-gennaio-14-dfa)
+
+[Esercizio 2](#esame-2022-01-14-re-to-eps-nfa)
