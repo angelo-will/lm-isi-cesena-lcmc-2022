@@ -71,6 +71,23 @@ a(aa)^*(bbb)^*(b+\epsilon)
 $$
 
 ---
+#### Esame-2022-Gennaio-31-re
+
+Esercizio 1. Definire (direttamente senza far trasformazioni) un’espressione regolare che rappresenti il linguaggio L su alfabeto {a,b} delle stringhe $a^nb^m$, con n,m ≥ 0, tali che, considerato r = $n \space mod(3)$ (il resto della divisione per 3 di n), si abbia: m è multiplo di r+2 (cioè esiste k
+≥ 0 tale che m = (r+2)·k ). Ad esempio ε, bb, bbbb, aaabb, a, abbb, aaaabbb, aa, aabbbb, aaaaabbbb appartengono al linguaggio L mentre b, ab, abb, aaabbbbb non vi appartengono.
+
+Alcune considerazioni:
+- 0 è multiplo di tutti i numeri
+- r cicla all'interno dei tre possibili resti della divisione per 3 $\to r \in$ {0,1,2}
+- m allo stesso modo darà come resto sempre tre possibili valori $\to r_m \in$ {2,3,4} 
+
+Possiamo così creare la RE come segue:
+
+$$
+(aaa)^*((bb)^*+a(bbb)^*+aa(bbbb)^*)
+$$
+
+---
 #### Esame-2020-Settembre-08-re
 
 Esercizio 1. Definire (direttamente, senza fare trasformazioni) un’espressione regolare che rappresenti il linguaggio L su alfabeto {a,b} delle stringhe $a^nb^m$, con n,m ≥ 0, per cui valga: se n mod 2 = 0 allora m mod 3 = 1, se invece n mod 2 = 1 allora m mod 3 = 2. Ad esempio aab, b, bbbb, aaabb, abbbbb, appartengono al linguaggio L mentre ε, a, aa, bb, bbb, baa, aabb, aaab, non vi appartengono. Trasformare, poi, l’espressione regolare in ε-NFA utilizzando la trasformazione vista a lezione (cioè quella definita nel libro di testo).
@@ -351,3 +368,7 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 [Esercizio 1](#esame-2022-febbraio-15-eps-nfa)
 
 [Esercizio 2](#esame-2022-02-15-automa-to-re)
+
+### 2022-01-31-exam
+
+[Esercizio 1](#esame-2022-gennaio-31-re)
