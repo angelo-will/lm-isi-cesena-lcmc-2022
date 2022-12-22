@@ -396,11 +396,16 @@ Esercizio 3. Realizzare un automa a pila che riconosce per pila vuota il linguag
 
 Nell'automa non sono presenti tutti i possibili casi visto che alcuni non si possono presentare.
 
----
+#### Esame-2022-Febbraio-15-pda-pila-vuota
 
+Esercizio 3. Realizzare un automa a pila che riconosce per pila vuota il linguaggio L su alfabeto {a,b,0,1,2,3} delle stringhe vaw, con v stringa su {0,1,2,3} e w stringa su {b,0,1,2,3}, in cui, indicata con k la somma dei numeri (0,1,2 o 3) contenuti in v, si ha: esiste una sottostringa bub di w, con u stringa su {0,1,2,3}, tale che la somma dei numeri (0,1,2 o 3) contenuti in u è k. Es. 101ab2b1b, ab00b2, abb, 00abbb0b, 302ab3b11201bb, 21ab00111bb30b sono stringhe del linguaggio, mentre ε, 0, 211, a, ab, 2ab2, 3a21b, 1ab2b0b non lo sono.
+
+> **Da risolvere**
+
+---
 ### Creazione PDA stato finale a partire da un linguaggio
 
-#### Esame-2022-Giugno-28-pda-final-state
+#### Esame-2022-Giugno-28-pda-stato-finale
 
 Esercizio 3. Progettare un automa a pila che riconosca per stato finale il linguaggio su alfabeto {0,1,2} che contiene le stringhe $0^n2x$, dove n ≥ 0 e x è una stringa su {0,1} tale che: x contiene n zeri e al massimo 2 uni. Ad esempio 2, 21, 211, 0210, 02101, 0021001, 002010, 000201010 appartengono al linguaggio mentre ε, 0, 12, 201, 002110, 00210101 non vi appartengono.
 
@@ -425,13 +430,15 @@ Esercizio 3. Progettare un automa a pila che riconosca per stato finale il lingu
 
 [Esercizio 2](#esame-2022-giugno-28-eps-nfa-to-dfa)
 
-[Esercizio 3](#esame-2022-giugno-28-pda-final-state)
+[Esercizio 3](#esame-2022-giugno-28-pda-stato-finale)
 
 ### 2022-02-15-exam
 
 [Esercizio 1](#esame-2022-febbraio-15-eps-nfa)
 
 [Esercizio 2](#esame-2022-02-15-automa-to-re)
+
+[Esercizio 3](#esame-2022-febbraio-15-pda-pila-vuota)
 
 ### 2022-01-31-exam
 
