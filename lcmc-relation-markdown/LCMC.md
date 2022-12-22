@@ -199,7 +199,7 @@ Ad esempio a, ab, aaaaa, aaabbbb, abbb appartengono al linguaggio mentre ε, b, 
 ![DFA dell'esercizio](pics/ex-dfa-2022-06-28.png)
 
 ---
-### Esame-2022-Gennaio-14-dfa
+#### Esame-2022-Gennaio-14-dfa
 Esercizio 1. Realizzare un DFA che riconosca il linguaggio sull’alfabeto binario {0,1} che contiene le stringhe in cui: ogni gruppo di 1 adiacenti è tale che, indicata con n la lunghezza del gruppo, si abbia $n \space mod(3)=1$ (cioè il resto di n diviso 3 è 1). Ad esempio 1111, 010, 01001111, ε, 0 appartengono al linguaggio mentre 111, 0110, 111100110 non vi appartengono.
 
 ![DFA dell'esercizio](pics/ex-dfa-2022-01-14.png)
@@ -384,6 +384,19 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 
 ![eps-NFA to DFA](pics/ex-eps-nfa-to-dfa-2020-06-26-solved.png)
 
+## PDA
+
+### Creazione PDA pila vuota a partire da un linguaggio
+
+#### Esame-2022-Settembre-09-pda-pila-vuota
+
+Esercizio 3. Realizzare un automa a pila che riconosce per pila vuota il linguaggio su alfabeto {0,1,2,a} delle stringhe w tali che, indicata con n la somma dei numeri (0, 1 o 2) contenuti w, in w vi sono esattamente n simboli a. Ad esempio ε, a1, aa2, 1a, 2aa, a2a, 0, 00, 1a0a1, 12aaa, 01aa11a, a101a, 2a0aa11a sono stringhe del linguaggio, mentre a, 1, 2, 11a, 1aa, 21aa, 0a non lo sono.
+
+![PDA esercizio](pics/ex-pda-empty-stack-2022-09-09.png)
+
+Nell'automa non sono presenti tutti i possibili casi visto che alcuni non si possono presentare.
+
+---
 ## Esami
 
 ### 2022-09-09-exam
@@ -391,6 +404,8 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 [Esercizio 1](#esame-2022-settembre-09-re)
 
 [Esercizio 2](#esame-2022-settembre-09-re-to-eps-nfa)
+
+[Esercizio 3](#esame-2022-settembre-09-pda-pila-vuota)
 
 ### 2022-06-28-exam
 
