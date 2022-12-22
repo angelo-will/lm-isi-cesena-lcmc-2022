@@ -397,6 +397,18 @@ Esercizio 3. Realizzare un automa a pila che riconosce per pila vuota il linguag
 Nell'automa non sono presenti tutti i possibili casi visto che alcuni non si possono presentare.
 
 ---
+
+### Creazione PDA stato finale a partire da un linguaggio
+
+#### Esame-2022-Giugno-28-pda-final-state
+
+Esercizio 3. Progettare un automa a pila che riconosca per stato finale il linguaggio su alfabeto {0,1,2} che contiene le stringhe $0^n2x$, dove n ≥ 0 e x è una stringa su {0,1} tale che: x contiene n zeri e al massimo 2 uni. Ad esempio 2, 21, 211, 0210, 02101, 0021001, 002010, 000201010 appartengono al linguaggio mentre ε, 0, 12, 201, 002110, 00210101 non vi appartengono.
+
+![PDA esercizio](pics/ex-pda-final-state-2022-06-28.png)
+
+> **Importante** non è stato verificato che 5 stati sia il minimo numero di stati per questo automa
+
+---
 ## Esami
 
 ### 2022-09-09-exam
@@ -412,6 +424,8 @@ Nell'automa non sono presenti tutti i possibili casi visto che alcuni non si pos
 [Esercizio 1](#esame-2022-giugno-28-dfa)
 
 [Esercizio 2](#esame-2022-giugno-28-eps-nfa-to-dfa)
+
+[Esercizio 3](#esame-2022-giugno-28-pda-final-state)
 
 ### 2022-02-15-exam
 
