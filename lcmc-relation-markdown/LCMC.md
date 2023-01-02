@@ -45,7 +45,7 @@ $$(aa)^*(b^*+a(bb)^*)$$
 ![Schema](pics/ex-re-to-eps-nfa-2022-09-09-pt8.png)
 
 ---
-#### Esame-2022-01-14-re-to-eps-nfa
+#### Esame-2022-Gennaio-14-re-to-eps-nfa
 
 Esercizio 2. Data l'espressione regolare $((1+\epsilon)0)^*+1$ trasformarla in un ε-NFA utilizzando la trasformazione vista a lezione (cioè quella definita nel libro di testo).
 
@@ -384,6 +384,21 @@ Trasformarlo in DFA utilizzando la trasformazione vista a lezione.
 
 ![eps-NFA to DFA](pics/ex-eps-nfa-to-dfa-2020-06-26-solved.png)
 
+## Minimizzazione Automa
+
+### Algoritmo Riempi Tabella
+
+#### Esame-2022-Gennaio-31-riempi-tabella
+
+Esercizio 2. Dato il DFA a fianco, prima aggiungere lo stato pozzo con le relative transizioni, poi, minimizzarlo tramite l’algoritmo riempi-tabella visto a lezione (cioè quello defini-to nel libro di testo). Mostrare la tabella, utilizzando una crocetta di tipo diverso ad ogni passata, ed il DFA minimo ottenuto (per ogni suo stato indicare quali stati del DFA iniziale
+rappresenta).
+
+![Automa testo esercizio](pics/ex-riempi-tabella-2022-01-31-text.png)
+
+Soluzione:
+
+![Soluzione Algoritmo riempi tabella](pics/ex-riempi-tabella-2022-01-31.png)
+
 ## PDA
 
 ### Creazione PDA a partire da un linguaggio
@@ -460,10 +475,12 @@ $$L=\{(00)^{2n}2u0^n:n \ge 0, u\in \{0,1\}^*\}$$
 
 [Esercizio 1](#esame-2022-gennaio-31-re)
 
+[Esercizio 2](#esame-2022-gennaio-31-riempi-tabella)
+
 [Esercizio 3](#esame-2022-gennaio-31-grammatica-to-pda)
 
 ### 2022-01-14-exam
 
 [Esercizio 1](#esame-2022-gennaio-14-dfa)
 
-[Esercizio 2](#esame-2022-01-14-re-to-eps-nfa)
+[Esercizio 2](#esame-2022-gennaio-14-re-to-eps-nfa)
