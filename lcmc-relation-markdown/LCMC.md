@@ -441,9 +441,18 @@ B \to 0B | 1B | ε
 $$
 Dire qual’è il linguaggio (insieme di stringhe) generato dalla grammatica. Inoltre trasformare, prima, la grammatica in un PDA che riconosce per pila vuota e, poi, in un PDA che riconosce per stato finale utilizzando, per entrambe le trasformazioni, esattamente quelle viste a lezione (cioè quelle definite nel libro di testo).
 
-> **Importante** soluzione non sicura
+> **Importante** soluzione non sicura.
+
 Il linguaggio dovrebbe essere 
 $$L=\{(00)^{2n}2u0^n:n \ge 0, u\in \{0,1\}^*\}$$
+
+PDA per pila vuota
+
+![PDA empty stack](pics/ex-pda-empty-stack-2022-01-31.png)
+
+PDA per stato finale
+
+![PDA final state](pics/ex-pda-final-state-2022-01-31.png)
 
 ## Esami
 
