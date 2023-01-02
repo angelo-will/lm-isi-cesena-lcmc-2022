@@ -459,6 +459,45 @@ PDA per stato finale
 
 ![PDA final state](pics/ex-pda-final-state-2022-01-31.png)
 
+---
+## Classificazione linguaggi
+---
+#### Esame-2022-Settembre-09-classificazione
+
+Esercizio 4. Si consideri il linguaggio L su alfabeto {0,1,2,a,b} delle stringhe xby, dove x e y sono stringhe del linguaggio dell’[esercizio 3](#esame-2022-settembre-09-pda-pila-vuota) e x contiene lo stesso numero di a di y. Ad esempio 2a0aba1a1, 1aba100, 1ab1a, b0 appartengono ad L mentre ε, 0, 1, 2, a, 1a, 1ba, 1b1, 2aab1a non vi appartengono. Classificare il linguaggio dicendo se è un linguaggio regolare, libero, ricorsivo, ricorsivamente enumerabile, o nemmeno ricorsivamente enumerabile. Giustificare la risposta.
+
+Pensando al linguaggio si può già capire che per essere libero, l'automa che riconosce il linguaggio dovrebbe poter conservare la "memoria" delle "a" presenti in "x" per poi consultare "y". Però per soddisfare le condizioni di "x" di appartenenza al linguaggio dell'esercizio 3, la pila và consumata. Arrivati a all'inizio di "y" quindi, non rimarrebbe nulla sulla pila.
+
+Si parte quindi con la verifica che il pumping lemma dei liberi non è soddisfatto.
+Verrà sfruttata la stringa:
+$$
+1^na^nb1^na^n
+$$
+Il pumping lemma dei linguaggi liberi dice che se un linguaggio è libero allora, data una stringa del linguaggio "z" scomponibile in 5 stringhe $uvwxy$ e con $|z|\ge n$ allora sono verificate le condizioni: 
+$$
+|vwx| \le n \\
+|vx| > 0 \\
+\forall i, uv^iwx^iy \in L
+$$
+
+In particolare nella stringa presa in esame $|vwx|$ può coprire:
+-  gli "1", nella prima o seconda parte
+-  le "a", nella prima o seconda parte
+-  "a" b "1"
+
+In tutti e tre i casi se aumentiamo "i" le uguaglianze fra le "n" non vengono rispettati e quindi la stringa non fa più parte del linguaggio, ergo il linguaggio non è regolare.
+
+Procediamo ora a verificare che invece il linguaggio è ricorsivo.
+
+Utilizzo una macchina di Turing deterministica.
+L'input si trova su un nastro. Trovo il carattere b e copio tutto ciò che segue su un secondo nastro cancellando il b e la stringa che lo segue dal primo nastro.
+Dal primo nastro verifico che la stringa appartiene al linguaggio dell'esercizio 3. Se non appartiene rifiuto (è stato già mostrato che un'automa a pila vuota esiste per tale linguaggio, quindi esiste un algoritmo).
+Faccio la stessa verifica per la stringa del secondo nastro (che appartiene a L) e rifiuto nel caso che non appartiene.
+Poi vado all'inizio degli entrambi nastri. Iterativamente per ogni a del primo nastro cerco un a corrispondente del secondo nastro e lo segno con un x. Ogni volta un a viene segnato vado all'inizio del secondo nastro.
+Se alla fine del primo nastro tutti gli a del secondo nastro sono stati segnati (e non esistono non segnati), allora accetto altrimenti rifiuto.
+Sono stati utilizzati due nastri per semplicità espressiva ed esiste un algoritmo equivalente per una TM con un solo nastro.
+
+---
 ## Esami
 
 ### 2022-09-09-exam
@@ -468,6 +507,8 @@ PDA per stato finale
 [Esercizio 2](#esame-2022-settembre-09-re-to-eps-nfa)
 
 [Esercizio 3](#esame-2022-settembre-09-pda-pila-vuota)
+
+[Esercizio 4](#esame-2022-settembre-09-classificazione)
 
 ### 2022-06-28-exam
 
